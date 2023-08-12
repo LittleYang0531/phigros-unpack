@@ -35,7 +35,7 @@ jobs:
           # Prepare UnityPy
           git clone https://ghproxy.com/https://github.com/K0lb3/UnityPy.git
           cd UnityPy
-          python -m pip install .
+          python3 -m pip install .
 
       - name: Download Resource Package
         run: |
