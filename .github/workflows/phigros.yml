@@ -35,6 +35,7 @@ jobs:
           # Prepare UnityPy
           git clone https://ghproxy.com/https://github.com/K0lb3/UnityPy.git
           cd UnityPy
+          python3 -m pip install lz4 brotli Pillow texture2ddecoder etcpak tabulate pyfmodex fsspec
           python3 -m pip install .
 
       - name: Download Resource Package
@@ -46,3 +47,7 @@ jobs:
       - name: Unpack Chart From Resource Package
         run: |
           python3 unpack.py
+
+      - name: Run Script
+        run: |
+          php data.php
