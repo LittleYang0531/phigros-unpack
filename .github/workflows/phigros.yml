@@ -32,8 +32,7 @@ jobs:
           # Prepare curl-impersonate
           wget https://ghproxy.com/https://github.com/lwthiker/curl-impersonate/releases/download/v0.5.4/curl-impersonate-v0.5.4.x86_64-linux-gnu.tar.gz -O curl.tar.gz
           tar -xvf curl.tar.gz
-          ls
 
       - name: Download Resource Package
         run: |
-          ./curl_chrome110 --parallel --parallel-immediate --parallel-max 64 -L -k -v -C - -o Phigros.xapk https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?version=${{ github.event.inputs.ver }}
+          ./curl_chrome110 -o Phigros.xapk https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?version=${{ github.event.inputs.ver }}
