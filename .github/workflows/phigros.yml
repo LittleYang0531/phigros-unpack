@@ -32,4 +32,4 @@ jobs:
 
       - name: Download Resource Package
         run: |
-          curl --parallel --parallel-immediate --parallel-max 64 -L -k -C - -O Phigros.xapk https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?version=${{ github.event.inputs.ver }}
+          curl --parallel --parallel-immediate --parallel-max 64 -L -k -v -C - -O Phigros.xapk https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?version=${{ github.event.inputs.ver }}
