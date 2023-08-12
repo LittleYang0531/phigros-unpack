@@ -35,4 +35,4 @@ jobs:
 
       - name: Download Resource Package
         run: |
-          ./curl_chrome110 -o Phigros.xapk https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?version=${{ github.event.inputs.ver }}
+          curl_chrome110 --parallel --parallel-immediate --parallel-max 64 -L -k -v -C - -o Phigros.xapk https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?version=${{ github.event.inputs.ver }}
