@@ -33,9 +33,7 @@ jobs:
           wget https://ghproxy.com/https://github.com/lwthiker/curl-impersonate/releases/download/v0.5.4/curl-impersonate-v0.5.4.x86_64-linux-gnu.tar.gz -O curl.tar.gz
           tar -xvf curl.tar.gz
           # Prepare UnityPy
-          git clone https://ghproxy.com/https://github.com/K0lb3/UnityPy.git
-          cd UnityPy
-          python3 -m pip install . --user
+          python3 -m pip install UnityPy --user
 
       - name: Download Resource Package
         run: |
