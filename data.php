@@ -36,7 +36,7 @@ $additional_info = [
         "thumbnail" => "https://img.moegirl.org.cn/common/3/33/%E4%BB%8A%E5%B9%B4%E3%82%82%E3%80%8C%E9%9B%AA%E9%99%8D%E3%82%8A%E3%80%81%E3%83%A1%E3%83%AA%E3%82%AF%E3%83%AA%E3%80%8D%E7%9B%AE%E6%8C%87%E3%81%97%E3%81%A6%E9%A0%91%E5%BC%B5%E3%82%8A%E3%81%BE%E3%81%99%EF%BC%81%EF%BC%81.jpg",
         "chart" => [
             [
-                "difficulty" => "SP",
+                "difficulty" => "IN",
                 "notes" => "2500"
             ]
         ]
