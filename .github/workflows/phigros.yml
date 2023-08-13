@@ -40,6 +40,7 @@ jobs:
           ./curl_chrome110 --parallel --parallel-immediate --parallel-max 64 -L -k -C - -o Phigros.xapk https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?version=${{ github.event.inputs.ver }}
           unzip Phigros.xapk
           unzip Android/obb/com.PigeonGames.Phigros/main.*.com.PigeonGames.Phigros.obb
+          mv ./assets/aa ./aa
           
       - name: Unpack Chart From Resource Package
         run: |
