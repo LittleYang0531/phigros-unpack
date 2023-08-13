@@ -222,7 +222,7 @@ foreach ($chart_info as $k => $v) {
     $chart_info[$k]["title"] = str_replace("/", "_", str_replace("\\", "_", $chart_info[$k]["title"]));
     echo "curl \"" . $v["thumbnail"] . "\" -o \"./chart/" . $chart_info[$k]["title"] ."/thumbnail.png\"\n";
     system("curl \"" . $v["thumbnail"] . "\" -o \"./chart/" . $chart_info[$k]["title"] ."/thumbnail.png\"");
-    echo "zip \"./result/" . $chart_info[$k]["title"] . ".zip\" \"./chart/" . $chart_info[$k]["title"] ."/*\"\n";
-    system("zip \"./result/" . $chart_info[$k]["title"] . ".zip\" \"./chart/" . $chart_info[$k]["title"] ."/*\"");
+    $cmd = "cd \"./chart/" . $chart_info[$k]["title"] ."\" && zip \"../../result/" . $chart_info[$k]["title"] . ".zip\" *";
+    echo $cmd . "\n"; system($cmd);
 }
 ?>
