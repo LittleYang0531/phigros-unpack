@@ -229,6 +229,7 @@ foreach ($chart_info as $k => $v) {
             break;
         }
     }
+    if ($ok) continue;
     $chart_info[$k]["title"] = str_replace("/", "_", str_replace("\\", "_", $chart_info[$k]["title"]));
     echo "curl \"" . $v["thumbnail"] . "\" -o \"./chart/" . $chart_info[$k]["title"] ."/thumbnail.png\"\n";
     system("curl \"" . $v["thumbnail"] . "\" -o \"./chart/" . $chart_info[$k]["title"] ."/thumbnail.png\"");
