@@ -23,6 +23,10 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -54,7 +58,7 @@ jobs:
         run: |
           php data.php "${{ github.event.inputs.accept }}"
 
-      - name: Uploading Sonolus Server for Linux aarch64
+      - name: Uploading Chart File
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.event.inputs.ver }}
