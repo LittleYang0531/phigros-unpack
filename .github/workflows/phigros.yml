@@ -11,6 +11,10 @@ on:
         description: 'Package Version'
         required: true
         default: 'latest'
+      accept:
+        description: 'Chart Filter (Use , to seperate them)'
+        required: true
+        default: '*'
         
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -48,4 +52,4 @@ jobs:
 
       - name: Run Script
         run: |
-          php data.php
+          php data.php "${{ github.event.inputs.accept }}"
