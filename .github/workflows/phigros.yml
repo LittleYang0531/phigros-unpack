@@ -53,3 +53,12 @@ jobs:
       - name: Run Script
         run: |
           php data.php "${{ github.event.inputs.accept }}"
+
+      - name: Uploading Sonolus Server for Linux aarch64
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.ver }}
+          name: Phigros ${{ github.event.inputs.ver }}
+          draft: false
+          prerelease: false
+          files: ./result/*
