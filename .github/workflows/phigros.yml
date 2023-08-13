@@ -35,8 +35,7 @@ jobs:
           # Prepare UnityPy
           git clone https://ghproxy.com/https://github.com/K0lb3/UnityPy.git
           cd UnityPy
-          python3 -m pip install lz4 brotli Pillow texture2ddecoder etcpak tabulate pyfmodex fsspec
-          python3 -m pip install .
+          python3 -m pip install . --user
 
       - name: Download Resource Package
         run: |
