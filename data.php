@@ -1,6 +1,9 @@
 <?php
 $url = "https://d.apkpure.com/b/XAPK/com.PigeonGames.Phigros?versionCode=";
 $info_url = "https://zh.moegirl.org.cn/Phigros/%E8%B0%B1%E9%9D%A2%E4%BF%A1%E6%81%AF";
+$accept = explode(",", $argv[1]);
+for ($i = 0; $i < count($accept); $i++) $accept[$i] = trim($accept[$i]);
+print_r($accept);
 $additional_info = [
     "Aleph-0" => [
         "chart" => [
@@ -219,6 +222,13 @@ for ($x = 0; $x < count($secondRound); $x++) {
 }
 @mkdir("result");
 foreach ($chart_info as $k => $v) {
+    $ok = false;
+    for ($i = 0; $i < count($accept); $i++) {
+        if ($accept[$i] == $k || $accept[$i] == "*") {
+            $ok = true;
+            break;
+        }
+    }
     $chart_info[$k]["title"] = str_replace("/", "_", str_replace("\\", "_", $chart_info[$k]["title"]));
     echo "curl \"" . $v["thumbnail"] . "\" -o \"./chart/" . $chart_info[$k]["title"] ."/thumbnail.png\"\n";
     system("curl \"" . $v["thumbnail"] . "\" -o \"./chart/" . $chart_info[$k]["title"] ."/thumbnail.png\"");
